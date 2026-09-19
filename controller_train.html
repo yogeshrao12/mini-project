@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Training Statistics</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(
+          rgba(0, 0, 0, 0.75),
+          rgba(0, 0, 0, 0.75)
+        ),
+        url("static/img/7.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #eaeaea;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+      color: #00e5ff;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #00e5ff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    section {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    section h4,
+    section h5 {
+      color: #00e5ff;
+      margin-bottom: 12px;
+    }
+
+    section p {
+      margin-bottom: 15px;
+    }
+
+    pre {
+      background: #111;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 15px auto 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h2>Model Training Statistics</h2>
+  <nav>
+    <a href="/controller_dashboard">Home</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <section>
+    <h4>🧠 Algorithm Used</h4>
+    <p>
+      <strong>DistilBERT</strong><br>
+      <em>Distilled Bidirectional Encoder Representations from Transformers</em>
+    </p>
+  </section>
+
+  <section>
+    <h4>📊 Model Statistics</h4>
+
+    <h5>Accuracy & Classification Report</h5>
+    <pre>
+{{ report }}
+    </pre>
+
+    <h5>Confusion Matrix</h5>
+    <img src="{{ url_for('static', filename='model_stats/confusion_matrix.png') }}">
+
+    <h5>Prediction Distribution</h5>
+    <img src="{{ url_for('static', filename='model_stats/prediction_distribution.png') }}">
+
+    <h5>True Label Distribution</h5>
+    <img src="{{ url_for('static', filename='model_stats/true_label_distribution.png') }}">
+  </section>
+
+</div>
+
+</body>
+</html>

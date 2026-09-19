@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Prediction</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.75),
+                rgba(0, 0, 0, 0.75)
+            ),
+            url("static/img/7.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #eaeaea;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #00e5ff;
+        }
+
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        header a:hover {
+            color: #00e5ff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        textarea {
+            width: 100%;
+            height: 140px;
+            padding: 12px;
+            border-radius: 6px;
+            border: none;
+            resize: vertical;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        textarea:focus {
+            outline: none;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 28px;
+            background: #00e5ff;
+            color: #000;
+            border: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #00bcd4;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.5);
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            color: #ffd54f;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🧠 Sentiment Analysis</h1>
+    <a href="/user_dashboard">← Back to Dashboard</a>
+</header>
+
+<div class="container">
+    <div class="card">
+
+        <form method="POST">
+            <label><strong>Enter text for sentiment prediction</strong></label>
+            <textarea name="text" placeholder="Enter text...">{{ text }}</textarea>
+            <button type="submit">Predict Sentiment</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            Prediction: {{ prediction }}
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+</body>
+</html>

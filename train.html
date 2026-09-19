@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Model</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.75)
+      ),
+      url("static/img/7.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #eaeaea;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 30px;
+      margin-bottom: 15px;
+      color: #00e5ff;
+    }
+
+    header a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    header a:hover {
+      color: #00e5ff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    section {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    section h3,
+    section h4,
+    section h5 {
+      color: #00e5ff;
+      margin-bottom: 10px;
+    }
+
+    section p {
+      margin-bottom: 15px;
+    }
+
+    pre {
+      background: #111;
+      color: #0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .action-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 18px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: 0.3s;
+    }
+
+    .action-link:hover {
+      background: #00e5ff;
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      margin-top: 40px;
+    }
+
+    footer p {
+      color: #bbb;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Model Training</h1>
+  <a href="/trainer_dashboard">← Back to Trainer Dashboard</a>
+</header>
+
+<div class="container">
+
+{% if done %}
+
+  <section>
+    <h3>Model Trained ✅</h3>
+  </section>
+
+  <section>
+    <h4>🧠 Algorithm Used</h4>
+    <p>
+      <strong>DistilBERT</strong><br>
+      <em>Distilled Bidirectional Encoder Representations from Transformers</em>
+    </p>
+  </section>
+
+  <section>
+    <h4>📊 Model Statistics</h4>
+
+    <h5>Accuracy & Classification Report</h5>
+    <pre>
+{{ report }}
+    </pre>
+  </section>
+
+  <section>
+    <h5>Confusion Matrix</h5>
+    <img src="{{ url_for('static', filename='model_stats/confusion_matrix.png') }}">
+  </section>
+
+  <section>
+    <h5>Prediction Distribution</h5>
+    <img src="{{ url_for('static', filename='model_stats/prediction_distribution.png') }}">
+  </section>
+
+  <section>
+    <h5>True Label Distribution</h5>
+    <img src="{{ url_for('static', filename='model_stats/true_label_distribution.png') }}">
+  </section>
+
+  <section>
+    <a href="/train_again" class="action-link">Train Again</a>
+  </section>
+
+{% else %}
+
+  <section>
+    <p>Training model...</p>
+  </section>
+
+{% endif %}
+
+</div>
+
+<footer>
+  <p>© 2026 | Deep Transfer Learning Based Sentiment Analysis System</p>
+</footer>
+
+</body>
+</html>

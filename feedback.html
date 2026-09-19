@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.75),
+                rgba(0, 0, 0, 0.75)
+            ),
+            url("static/img/7.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #eaeaea;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 30px;
+            color: #00e5ff;
+            margin-bottom: 10px;
+        }
+
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        header a:hover {
+            color: #00e5ff;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #00e5ff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            margin-bottom: 18px;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #00e5ff;
+            color: #000;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #00bcd4;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Feedback</h1>
+    <a href="/user_dashboard">← Back to Dashboard</a>
+</header>
+
+<div class="container">
+    <section>
+        <h2>Give Feedback</h2>
+
+        <form method="post">
+            <label>Rating (1–5)</label>
+            <input type="number" name="rating" min="1" max="5" required>
+
+            <label>Note</label>
+            <textarea name="note" required></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+</div>
+
+</body>
+</html>

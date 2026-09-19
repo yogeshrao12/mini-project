@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.75),
+                rgba(0, 0, 0, 0.75)
+            ),
+            url("static/img/7.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #eaeaea;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #00e5ff;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        section h3 {
+            color: #ffd54f;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            margin-top: 40px;
+        }
+
+        footer p {
+            color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>User Dashboard</h1>
+
+    <nav>
+        <a href="/predict">Sentiment Prediction</a>
+        <a href="/history">Prediction History</a>
+        <a href="/feedback">Submit Feedback</a>
+        <a href="/my_feedbacks">View Feedback</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section>
+        <h3>📌 User Module Overview</h3>
+        <p>
+            The <strong>User module</strong> provides an interface for end users to
+            interact with the trained sentiment analysis model. Users can submit
+            textual data for sentiment classification and provide feedback on the
+            system’s predictions.
+        </p>
+    </section>
+
+    <section>
+        <h3>🧠 Sentiment Prediction Process</h3>
+        <p>
+            User-provided text is processed using a <strong>transformer-based
+            deep learning model</strong> trained through transfer learning.
+            The model classifies the input text into sentiment categories.
+        </p>
+        <ul>
+            <li>Input text acquisition</li>
+            <li>Tokenization using DistilBERT tokenizer</li>
+            <li>Deep neural inference</li>
+            <li>Sentiment classification (Positive / Negative)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>📜 Prediction History Management</h3>
+        <p>
+            Each sentiment prediction made by the user is securely stored in the
+            database. Users can view and manage their prediction history for
+            transparency and analysis.
+        </p>
+    </section>
+
+    <section>
+        <h3>🗣️ Feedback Submission & Tracking</h3>
+        <p>
+            Users can submit feedback regarding model predictions. Feedback includes
+            quantitative ratings and qualitative remarks, which are reviewed by the
+            Controller module.
+        </p>
+        <ul>
+            <li>Rating-based evaluation</li>
+            <li>Short textual feedback</li>
+            <li>Status tracking (Pending / Reviewed)</li>
+            <li>Controller remarks visibility</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>🔐 Security & Access Control</h3>
+        <p>
+            User actions are protected using role-based authentication, ensuring that
+            only authorized users can access prediction and feedback features.
+        </p>
+    </section>
+
+    <section>
+        <h3>🎯 User Responsibilities</h3>
+        <ul>
+            <li>Provide meaningful input text for prediction</li>
+            <li>Review prediction results responsibly</li>
+            <li>Submit constructive feedback</li>
+            <li>Maintain account confidentiality</li>
+        </ul>
+    </section>
+
+</div>
+
+<footer>
+    <p>User Module | Deep Transfer Learning Based Sentiment Analysis System</p>
+</footer>
+
+</body>
+</html>

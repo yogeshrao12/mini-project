@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trainer Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.75),
+                rgba(0, 0, 0, 0.75)
+            ),
+            url("static/img/7.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #eaeaea;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #00e5ff;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        section h3 {
+            color: #00e5ff;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 22px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            margin-top: 40px;
+        }
+
+        footer p {
+            color: #bbb;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>Trainer Dashboard</h2>
+
+    <nav>
+        <a href="/dataset_stats">Dataset Statistics</a>
+        <a href="/preprocess">Preprocessing</a>
+        <a href="/train">Model Training</a>
+        <a href="/logout">Logout</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <section>
+        <h3>📌 Trainer Module Overview</h3>
+        <p>
+            The <strong>Trainer module</strong> is responsible for preparing data,
+            configuring the learning pipeline, and training the deep learning model
+            using <strong>transfer learning techniques</strong>.
+        </p>
+    </section>
+
+    <section>
+        <h3>🧠 Algorithm Used</h3>
+        <p>
+            <strong>DistilBERT</strong><br>
+            <em>Distilled Bidirectional Encoder Representations from Transformers</em>
+        </p>
+        <p>
+            DistilBERT is a transformer-based deep learning model that provides
+            efficient training and inference while maintaining high accuracy.
+        </p>
+    </section>
+
+    <section>
+        <h3>📂 Dataset Handling & Statistics</h3>
+        <p>
+            The trainer analyzes datasets collected from multiple sources.
+            Dataset statistics include record count, label distribution,
+            and text length analysis to ensure data quality before training.
+        </p>
+    </section>
+
+    <section>
+        <h3>⚙️ Data Preprocessing</h3>
+        <p>
+            Preprocessing converts raw textual data into a format suitable for
+            transformer models. This includes:
+        </p>
+        <ul>
+            <li>Text normalization</li>
+            <li>Tokenization using DistilBERT tokenizer</li>
+            <li>Padding and truncation</li>
+            <li>Label encoding</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>📊 Model Training</h3>
+        <p>
+            During training, the preprocessed data is fine-tuned on a
+            pre-trained DistilBERT model using supervised learning.
+            The trainer monitors training performance using standard evaluation metrics.
+        </p>
+    </section>
+
+    <section>
+        <h3>📈 Training Evaluation Metrics</h3>
+        <ul>
+            <li>Accuracy</li>
+            <li>Precision</li>
+            <li>Recall</li>
+            <li>F1-Score</li>
+            <li>Confusion Matrix</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>🔐 Trainer Responsibilities</h3>
+        <ul>
+            <li>Ensure dataset quality and consistency</li>
+            <li>Perform effective preprocessing</li>
+            <li>Train and fine-tune the sentiment classification model</li>
+            <li>Maintain reproducible and efficient training workflows</li>
+        </ul>
+    </section>
+
+</div>
+
+<footer>
+    <p>Trainer Module | Deep Transfer Learning Based Sentiment Analysis System</p>
+</footer>
+
+</body>
+</html>

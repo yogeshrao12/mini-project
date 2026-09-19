@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Feedbacks</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.75),
+                    rgba(0, 0, 0, 0.75)),
+                url("static/img/7.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #eaeaea;
+
+            /* ✅ Sticky footer setup */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h2 {
+            color: #00e5ff;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        header a:hover {
+            color: #00e5ff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th {
+            background: rgba(0, 229, 255, 0.15);
+            color: #00e5ff;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #f5f5f5;
+            vertical-align: top;
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .status {
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        footer p {
+            color: #bbb;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                font-size: 14px;
+            }
+
+            header h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>My Feedbacks</h2>
+        <a href="/user_dashboard">← Back to Dashboard</a>
+    </header>
+
+    <div class="container">
+        <div class="card">
+
+            <table>
+                <tr>
+                    <th>Rating</th>
+                    <th>Note</th>
+                    <th>Status</th>
+                    <th>Controller Note</th>
+                    <th>Date</th>
+                </tr>
+
+                {% for f in feedbacks %}
+                <tr>
+                    <td>{{ f[0] }}</td>
+                    <td>{{ f[1] }}</td>
+                    <td class="status">{{ f[2] }}</td>
+                    <td>{{ f[3] or '-' }}</td>
+                    <td>{{ f[4] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 | Deep Transfer Learning Based Sentiment Analysis System</p>
+    </footer>
+
+</body>
+
+</html>

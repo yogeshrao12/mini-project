@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dataset Statistics</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.75),
+                rgba(0, 0, 0, 0.75)
+            ),
+            url("static/img/7.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #eaeaea;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #00e5ff;
+        }
+
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        header a:hover {
+            color: #00e5ff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        section h2 {
+            color: #ffd54f;
+            margin-bottom: 10px;
+        }
+
+        section h3 {
+            color: #00e5ff;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin-left: 22px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th, td {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        th {
+            background: rgba(0, 0, 0, 0.6);
+            color: #00e5ff;
+            position: sticky;
+            top: 0;
+        }
+
+        /* Preview box */
+        .preview-box {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 6px;
+        }
+
+        .preview-box table {
+            table-layout: fixed;
+        }
+
+        .preview-box td {
+            max-width: 380px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .preview-box td:hover {
+            white-space: normal;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>📊 Dataset Statistics</h1>
+    <a href="/trainer_dashboard">← Back to Trainer Dashboard</a>
+</header>
+
+<div class="container">
+
+    {% for d in datasets %}
+    <section>
+        <h2>{{ d.source }} / {{ d.file }}</h2>
+
+        <ul>
+            <li><b>Total Rows:</b> {{ d.rows }}</li>
+            <li><b>Columns:</b> {{ d.columns }}</li>
+            <li><b>Label Distribution:</b> {{ d.label_counts }}</li>
+            <li><b>Avg Text Length:</b> {{ d.avg_text_length }}</li>
+            <li><b>Min Text Length:</b> {{ d.min_text_length }}</li>
+            <li><b>Max Text Length:</b> {{ d.max_text_length }}</li>
+        </ul>
+
+        <h3>Preview (First 5 Rows)</h3>
+
+        <div class="preview-box">
+            <table>
+                <tr>
+                    {% for key in d.preview[0].keys() %}
+                    <th>{{ key }}</th>
+                    {% endfor %}
+                </tr>
+
+                {% for row in d.preview %}
+                <tr>
+                    {% for value in row.values() %}
+                    <td title="{{ value }}">{{ value }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </section>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>

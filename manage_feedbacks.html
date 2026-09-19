@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Feedbacks</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.75),
+                rgba(0, 0, 0, 0.75)
+            ),
+            url("static/img/7.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #eaeaea;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h2 {
+            font-size: 28px;
+            color: #00e5ff;
+            margin-bottom: 10px;
+        }
+
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        header a:hover {
+            color: #00e5ff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: center;
+        }
+
+        th {
+            background: rgba(0, 0, 0, 0.6);
+            color: #00e5ff;
+            font-weight: 600;
+        }
+
+        tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        tr:last-child {
+            border-bottom: none;
+        }
+
+        input {
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+            width: 160px;
+        }
+
+        button {
+            margin-top: 6px;
+            padding: 6px 14px;
+            border: none;
+            border-radius: 6px;
+            background: #00e5ff;
+            color: #000;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4dd0e1;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>Manage Feedbacks</h2>
+    <a href="/controller_dashboard">← Back to Dashboard</a>
+</header>
+
+<div class="container">
+
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Rating</th>
+            <th>Note</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+        {% for f in feedbacks %}
+        <tr>
+            <td>{{ f[1] }}</td>
+            <td>{{ f[2] }}</td>
+            <td>{{ f[3] }}</td>
+            <td>{{ f[4] }}</td>
+            <td>
+                <form method="post" action="/review_feedback/{{ f[0] }}">
+                    <input name="controller_note" placeholder="Controller note" required><br>
+                    <button type="submit">Mark Reviewed</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>

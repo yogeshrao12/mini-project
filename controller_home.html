@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Controller Dashboard</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.75)
+      ),
+      url("static/img/7.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #eaeaea;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+      color: #00e5ff;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #00e5ff;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    section {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    section h3 {
+      color: #ffd54f;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      margin-top: 40px;
+    }
+
+    footer p {
+      color: #bbb;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h2>Controller Dashboard</h2>
+
+  <nav>
+    <a href="/controller_train_stats">View Training Statistics</a>
+    <a href="/manage_users">Manage Users</a>
+    <a href="/manage_feedbacks">Manage Feedback</a>
+    <a href="/logout">Logout</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <section>
+    <h3>📌 Controller Module Overview</h3>
+    <p>
+      The <strong>Controller module</strong> acts as the supervisory and governance
+      layer of the sentiment analysis system. It ensures proper system operation,
+      monitors model performance, and manages user interactions.
+    </p>
+  </section>
+
+  <section>
+    <h3>📊 Model Monitoring & Evaluation</h3>
+    <p>
+      Controllers are responsible for reviewing training outcomes produced by the
+      Trainer module. Model evaluation metrics enable informed decision-making
+      regarding model reliability and deployment readiness.
+    </p>
+    <ul>
+      <li>Accuracy analysis</li>
+      <li>Precision, Recall, and F1-Score</li>
+      <li>Confusion Matrix visualization</li>
+      <li>Training performance verification</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>👥 User Management</h3>
+    <p>
+      The Controller manages registered users to maintain system integrity and
+      access control. This includes monitoring user activity and enforcing
+      administrative policies.
+    </p>
+    <ul>
+      <li>View registered users</li>
+      <li>Remove unauthorized or inactive users</li>
+      <li>Ensure secure role-based access</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>🗣️ Feedback Review & Quality Assurance</h3>
+    <p>
+      User feedback provides valuable insights into model performance and
+      user satisfaction. The Controller reviews submitted feedback and takes
+      appropriate actions to improve system quality.
+    </p>
+    <ul>
+      <li>Review user ratings and comments</li>
+      <li>Update feedback status (Pending / Reviewed)</li>
+      <li>Provide official controller remarks</li>
+      <li>Support continuous system improvement</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>🔐 Security & Governance Responsibilities</h3>
+    <p>
+      The Controller ensures system governance through secure authentication,
+      authorization, and compliance with operational policies.
+    </p>
+    <ul>
+      <li>Role-based access enforcement</li>
+      <li>System monitoring and auditing</li>
+      <li>Operational decision oversight</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>🎯 Controller Responsibilities</h3>
+    <ul>
+      <li>Monitor overall system performance</li>
+      <li>Ensure model reliability and transparency</li>
+      <li>Oversee user and feedback management</li>
+      <li>Support continuous improvement of the sentiment analysis system</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer>
+  <p>Controller Module | Deep Transfer Learning Based Sentiment Analysis System</p>
+</footer>
+
+</body>
+</html>
